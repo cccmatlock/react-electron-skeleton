@@ -1,0 +1,33 @@
+{
+	"name": "sandbox",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "cccmatlock <67501974+cccmatlock@users.noreply.github.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@babel/core": "^7.15.8",
+		"@babel/preset-env": "^7.15.8",
+		"@babel/preset-react": "^7.14.5",
+		"@babel/preset-typescript": "^7.15.0",
+		"@types/react": "^17.0.31",
+		"@types/react-dom": "^17.0.10",
+		"babel-loader": "^8.2.3",
+		"css-loader": "^6.4.0",
+		"html-webpack-plugin": "^5.4.0",
+		"style-loader": "^3.3.1",
+		"typescript": "^4.4.4",
+		"webpack": "^5.59.1",
+		"webpack-cli": "^4.9.1",
+		"webpack-dev-server": "^4.3.1"
+	},
+	"dependencies": {
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2"
+	},
+	"scripts": {
+		"build": "webpack --config ./config/webpack.config.js",
+		"build:debug": "webpack --config ./config/webpack.config.js --stats verbose",
+		"dev:start": "webpack serve --config ./config/webpack.config.js --open",
+		"dev": "webpack-dev-server --config ./config/webpack.config.js --open"
+	}
+}
