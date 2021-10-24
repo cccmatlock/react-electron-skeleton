@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ProvidePlugin } = require("webpack");
 
 module.exports = {
 	mode: "development",
@@ -9,15 +10,31 @@ module.exports = {
 		path: path.resolve(__dirname, "..", "./dist"),
 	},
 	resolve: {
-		extensions: [".tsx", ".ts", ".js"],
+		extensions: [".tsx", ".ts", ".js", ".jsx"],
 	},
 	module: {
 		rules: [
 			{
 				test: /\.(ts|js)x?$/,
 				exclude: /node_modules/,
-				loader: "babel-loader",
+				use: [
+					{
+						loader: "babel-loader",
+						options: {
+							presets: [
+								"@babel/preset-typescript",
+								[
+									"@babel/preset-react",
+									{
+										runtime: "automatic",
+									},
+								],
+							],
+						},
+					},
+				],
 			},
+
 			{
 				test: /\.css$/,
 				use: ["style-loader", "css-loader"],
@@ -27,6 +44,9 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: path.resolve(__dirname, "..", "./src/index.html"),
+		}),
+		new ProvidePlugin({
+			React: "react",
 		}),
 	],
 };

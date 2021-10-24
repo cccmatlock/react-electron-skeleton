@@ -1,11 +1,13 @@
 import ReactDOM from "react-dom";
-import { App } from "./App";
+import React from "react";
+import App from "./App";
+import GlobalStyles from "./styles/Global";
 
 const Root: React.FC = () => (
-	<div>
-		What up
-		<h1>We in this</h1>
-	</div>
+	<React.Fragment>
+		<GlobalStyles />
+		<App />
+	</React.Fragment>
 );
 
 ReactDOM.render(<Root />, document.getElementById("root"));

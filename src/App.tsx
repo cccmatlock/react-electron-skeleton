@@ -1,11 +1,15 @@
 import { FC } from "react";
 
-export const App: FC = () => {
+import { Header } from "./components/Header";
+
+const App: FC = () => {
 	return (
 		<div>
-			<h1>Hello</h1>
+			<Header />
 			<section>First Section</section>
 			<h2>Check it out</h2>
 		</div>
 	);
 };
+
+export default App;
