@@ -9,15 +9,20 @@
 		"@babel/preset-env": "^7.15.8",
 		"@babel/preset-react": "^7.14.5",
 		"@babel/preset-typescript": "^7.15.0",
+		"@types/electron": "^1.6.10",
 		"@types/react": "^17.0.31",
 		"@types/react-dom": "^17.0.10",
 		"@types/styled-components": "^5.1.15",
 		"babel-loader": "^8.2.3",
 		"babel-plugin-styled-components": "^1.13.3",
+		"concurrently": "^6.3.0",
 		"css-loader": "^6.4.0",
+		"electron": "^15.3.0",
+		"electron-reloader": "^1.2.1",
 		"html-webpack-plugin": "^5.4.0",
 		"style-loader": "^3.3.1",
 		"typescript": "^4.4.4",
+		"wait-on": "^6.0.0",
 		"webpack": "^5.59.1",
 		"webpack-cli": "^4.9.1",
 		"webpack-dev-server": "^4.3.1"
@@ -29,8 +34,9 @@
 	},
 	"scripts": {
 		"build": "webpack --config ./config/webpack.config.js",
+		"build:dev": "webpack serve --config ./config/webpack.config.js",
 		"build:debug": "webpack --config ./config/webpack.config.js --stats verbose",
-		"dev:start": "webpack serve --config ./config/webpack.config.js --open",
-		"dev": "webpack-dev-server --config ./config/webpack.config.js --open"
+		"electron": "electron ./src/main/index.js",
+		"dev:start": "concurrently \"yarn build:dev\" \"wait-on http://localhost:8080 && yarn electron\""
 	}
 }

@@ -4,9 +4,9 @@ const { ProvidePlugin } = require("webpack");
 
 module.exports = {
 	mode: "development",
-	entry: path.resolve(__dirname, "..", "./src/index.tsx"),
+	entry: path.resolve(__dirname, "..", "./src/renderer/index.tsx"),
 	output: {
-		filename: "bundle.js",
+		filename: "rendererBundle.js",
 		path: path.resolve(__dirname, "..", "./dist"),
 	},
 	resolve: {
@@ -43,7 +43,7 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: path.resolve(__dirname, "..", "./src/index.html"),
+			template: path.resolve(__dirname, "..", "./src/renderer/index.html"),
 		}),
 		new ProvidePlugin({
 			React: "react",

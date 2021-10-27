@@ -17,7 +17,7 @@ export const Header: FC = () => {
 	return (
 		<>
 			<HeaderContainer>
-				<HeaderText>This is Header</HeaderText>
+				<HeaderText>I did great</HeaderText>
 			</HeaderContainer>
 		</>
 	);
