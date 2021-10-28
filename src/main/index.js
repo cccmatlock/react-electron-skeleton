@@ -11,13 +11,15 @@ function createWindow() {
 		},
 	});
 
-	win.loadURL("http://localhost:8080");
+	win.loadURL("http://localhost:3000");
 }
 
 try {
 	require("electron-reloader")(module, {
 		watchRenderer: true,
 	});
-} catch {}
+} catch (error) {
+	console.log(error);
+}
 
 app.whenReady().then(createWindow);

@@ -12,6 +12,13 @@ module.exports = {
 	resolve: {
 		extensions: [".tsx", ".ts", ".js", ".jsx"],
 	},
+	devServer: {
+		static: {
+			directory: path.join(__dirname, "..", "./dist"),
+		},
+		compress: true,
+		port: 3000,
+	},
 	module: {
 		rules: [
 			{
