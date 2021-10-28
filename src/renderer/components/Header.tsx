@@ -11,5 +11,5 @@ const HeaderContainer = styled.div`
 `;
 
 export const Header: FC = () => {
-	return <HeaderContainer>I did great</HeaderContainer>;
+	return <HeaderContainer>Welcome to react-electron-skeleton!!!</HeaderContainer>;
 };
