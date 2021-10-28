@@ -11,10 +11,10 @@ This repository serves as a React-Electron skeleton with Typescript and Styled C
 
 # Setup
 
-- First run yarn install from the root level of the repo
+- First run `yarn install` from the root level of the repo
 
-  - Note: If you do not have yarn, run <npm i -g yarn>
+  - Note: If you do not have yarn, run `npm i -g yarn`
 
-- Next run <yarn start>
+- Next run `yarn start`
 
 - Enjoy! You now have a fully functional react-electron-skeleton!
