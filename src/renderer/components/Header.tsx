@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import colors from "../styles/color-palette";
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.h2`
 	width: 100vw;
 	height: 15vh;
 	background-color: ${colors.medBlue};
